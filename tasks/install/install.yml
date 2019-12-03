@@ -1,0 +1,22 @@
+---
+- name: Set shell props
+  set_fact:
+    shell_props: "{{ shells[shell] }}"
+
+- name: Add repository
+  action:
+    module: "{{ add_repository_module }}"
+    state: present
+    repo: "{{ shell_props.repository_name }}"
+  when: 
+    # - shell in shells
+    # - shells|selectattr(shell, "defined")|list|length >0
+    - shell_props.repository_name is defined
+    - shell not in ['true', 'false']
+
+- name: Install shell
+  package:
+    name: "{{ shell_props.package_name }}"
+    state: present
+  when:
+    - shell_props.package_name is defined

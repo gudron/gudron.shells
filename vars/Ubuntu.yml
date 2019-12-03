@@ -1,0 +1,11 @@
+---
+add_repository_module: apt_repository
+
+shells:
+  dash:
+    package_name: dash
+  ash:
+    package_name: ash
+    repository_name: "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }} universe"
+  zsh:
+    package_name: zsh
