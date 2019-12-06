@@ -1,7 +1,3 @@
 ---
-shell_params:
-  zsh:
-    theme: agnoster
-
 to_install:
   - ash

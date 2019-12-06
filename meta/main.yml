@@ -1,6 +1,6 @@
 galaxy_info:
   author: Alex V Kotelnikov 
-  description: Roles for install shells
+  description: Roles for install shell's
   license: "license (Apache)"
 
   min_ansible_version: 2.4

@@ -9,8 +9,6 @@
     state: present
     repo: "{{ shell_props.repository_name }}"
   when: 
-    # - shell in shells
-    # - shells|selectattr(shell, "defined")|list|length >0
     - shell_props.repository_name is defined
     - shell not in ['true', 'false']
 
