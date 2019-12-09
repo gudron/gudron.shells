@@ -12,7 +12,7 @@ Role Variables
 
     Currently supported: `zsh`, `ash/dash`
 
-    Full example: [defaults/main.yml](defaults/main.yml).
+  Full example: [defaults/main.yml](defaults/main.yml).
 
 Instalation
 -----------
