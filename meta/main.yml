@@ -1,6 +1,6 @@
 galaxy_info:
-  author: Alex V Kotelnikov 
-  description: Roles for install shell's
+  author: Alex V Kotelnikov
+  description: Ansible role for install operation system shell's
   license: "license (Apache)"
 
   min_ansible_version: 2.4
@@ -13,14 +13,14 @@ galaxy_info:
     - name: Debian
       versions:
         - 8.0
-        - 9.0  
+        - 9.0
 
   galaxy_tags:
     - shell
     - linux shell
     - ash
     - zsh
-    
+
 allow_duplicates: true
 
 dependencies: []
