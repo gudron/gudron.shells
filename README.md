@@ -1,7 +1,7 @@
 gudron.shells
-=========
+=============
 
-Roles for install operation system shell's
+Ansible role for install operation system shell's
 
 Role Variables
 --------------
@@ -12,7 +12,24 @@ Role Variables
 
     Currently supported: `zsh`, `ash/dash`
 
-    Full example: [defaults/main.yml](defaults/main.yml).
+  Full example: [defaults/main.yml](defaults/main.yml).
+
+Instalation
+-----------
+
+Add **gudron.sudo** role to your *requirements* file.
+
+```yaml
+  - src: git@github.com:gudron/gudron.shells.git
+    scm: git
+    version: master
+```
+
+Install roles via **ansible-galaxy** tool.
+
+```bash
+ansible-galaxy install -p roles -r requirements.yml
+```
 
 Example Playbook
 ----------------
