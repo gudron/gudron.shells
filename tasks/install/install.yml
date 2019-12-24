@@ -3,12 +3,6 @@
   set_fact:
     shell_props: "{{ shells[shell] }}"
 
-- name: Set shell installed
-  set_fact:
-    is_shell_installed: "{{ lookup('pipe','command -v ' + shell_props.package_name + ' > /dev/null && echo True || echo False') | bool }}"
-  when:
-    - shell_props.package_name is defined
-
 - name: Add repository
   action:
     module: "{{ add_repository_module }}"
@@ -26,3 +20,14 @@
   when:
     - shell_props.package_name is defined
     - not is_shell_installed
+    - ansible_distribution != 'Alpine'
+
+- name: Install shell
+  package:
+    name: "{{ shell_props.package_name }}"
+    state: present
+  when:
+    - shell_props.package_name is defined
+    - not is_shell_installed
+    - ansible_distribution == 'Alpine'
+    - shell_props.package_name != 'ash'
