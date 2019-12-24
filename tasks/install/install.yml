@@ -18,7 +18,6 @@
     state: present
   when:
     - shell_props.package_name is defined
-    - not is_shell_installed
     - ansible_distribution != 'Alpine'
 
 - name: Install shell
