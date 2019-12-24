@@ -18,3 +18,13 @@
     state: present
   when:
     - shell_props.package_name is defined
+    - ansible_distribution != 'Alpine'
+
+- name: Install shell
+  package:
+    name: "{{ shell_props.package_name }}"
+    state: present
+  when:
+    - shell_props.package_name is defined
+    - ansible_distribution == 'Alpine'
+    - shell_props.package_name != 'ash'

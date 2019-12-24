@@ -13,8 +13,10 @@ galaxy_info:
     - name: Debian
       versions:
         - 8.0
-        - 9.0
-
+        - 9.0  
+    - name: Alpine
+      versions:
+        - 3.11
   galaxy_tags:
     - shell
     - linux shell
